@@ -1,30 +1,13 @@
-# React + TypeScript + Vite
+# Scroll infite 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El scroll infinito es una funcionalidad utilizada para tener un dezplazamiento infinito de contenido. A medida que el usuario desplaza la pantalla, el contenido se va cargando poco a poco.
 
-Currently, two official plugins are available:
+## Ejemplo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+En la siguiente aplicación se muestra un desplazamiento infinito de personajes de la serie de Rick and Morty utilizando su API. Cada vez que el usuario desplaza la pantalla y va llegando al final de la lista, se cargan 20 personajes más.
 
-## Expanding the ESLint configuration
+## Como se desarrolló
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Al obtener la lista de personajes, se le coloca un observador al último elemento de la lista. Cada vez que el usuario desplaza la pantalla y va llegando al final de la lista donde está este elemento con el observador, se cargan 20 personajes más, se elimina el observador que tenia el elemento y se le coloca un nuevo al nuevo elemento final de la lista. 
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Este proyecto esta construido con [React](https://reactjs.org/) y [Vite](https://vitejs.dev/). Para ver el proyecto en tiempo real, [vea el repositorio](https://github.com/RubertG/infinite-scroll)
