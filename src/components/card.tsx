@@ -2,6 +2,7 @@ import { FC } from "react"
 import { Character } from "../types"
 
 export const Card: FC<Character> = ({ image, name, species, status, gender, origin: { name: origin }, location: { name: location } }) => {
+
   return (
     <article className="card">
       <img
@@ -22,3 +23,4 @@ export const Card: FC<Character> = ({ image, name, species, status, gender, orig
     </article>
   )
 }
+
